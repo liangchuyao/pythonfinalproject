@@ -1,4 +1,4 @@
-# python final project
+# Python Final Project
 ***
 ####  URL：
 - [Github  URL](https://github.com/liangchuyao/pythonfinalproject)
