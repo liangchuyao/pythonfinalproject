@@ -872,12 +872,15 @@
     <option value="2">PM2.5.csv</option>
 </select>
 <div class="table-responsive" id="list-1">
-    <select onchange="selectRows('list-1',this)">
-        <option value="line0">全部显示</option>
-        {% for list in list_data_1 %}
-        <option value="line{{loop.index}}">{{list[0]}}</option>
-        {% endfor %}
-    </select>
+    <div style="display:inline-block;margin:10px 5px 10px 0px">
+        <select  id="list-1-select" sytle="maigin">
+            <option value="line0">全部显示</option>
+            {% for list in list_data_1 %}
+            <option value="line{{loop.index}}">{{list[0]}}</option>
+            {% endfor %}
+        </select>
+        <button type="button" class="btn btn-primary" onclick="selectRows('list-1')">Go</button>
+    </div>
     <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -908,12 +911,15 @@
     </table>
 </div>
 <div class="table-responsive" id="list-2" style="display:none;">
-    <select onchange="selectRows('list-2',this)">
-        <option value="line0">全部显示</option>
-        {% for list in list_data_1 %}
-        <option value="line{{loop.index}}">{{list[0]}}</option>
-        {% endfor %}
-    </select>
+    <div style="display:inline-block;margin:10px 5px 10px 0px">
+        <select  id="list-2-select" sytle="maigin">
+            <option value="line0">全部显示</option>
+            {% for list in list_data_2 %}
+            <option value="line{{loop.index}}">{{list[0]}}</option>
+            {% endfor %}
+        </select>
+        <button type="button" class="btn btn-primary" onclick="selectRows('list-2')">Go</button>
+    </div>
     <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -947,7 +953,8 @@
 
 {% block scripts %}
 <script>
-    function selectRows(list_id,obj){
+    function selectRows(list_id){
+        let obj = document.getElementById(list_id+"-select")
         let rows = document.getElementsByClassName(list_id+"-rows")
         if(obj.value == "line0"){
             for(i=0;i<rows.length;i++){
