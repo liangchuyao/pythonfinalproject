@@ -1,0 +1,2007 @@
+{% extends "base.html" %}
+
+{% block text %}
+<h4>首先我们可以看看PM2.5提升最高的国家尼日利亚，在PM2.5一直飙升的同时它的GDP也是在上涨的，同时它的森林覆盖率也是在逐步下降的，这证实了之前的猜想较为贫穷的国家需要靠破坏环境（森林覆盖率降低）来发展GDP。</h4>
+{% endblock text %}
+
+{% block figure %}
+<select onchange="getTableType(this)">
+    <option value="1">世界2010-2016人均GDP</option>
+    <option value="2">世界2010-2016森林覆盖率</option>
+    <option value="3">世界2010-2016PM2.5空气污染指数</option>
+</select>
+<div id="248345bb5a9241a2811de10e7d227ff1" class="chart-container" style="width:900px; height:500px;"></div>
+<script>
+    var chart_248345bb5a9241a2811de10e7d227ff1 = echarts.init(
+        document.getElementById('248345bb5a9241a2811de10e7d227ff1'), 'white', {
+            renderer: 'canvas'
+        });
+    var option_248345bb5a9241a2811de10e7d227ff1 = {
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "color": [
+            "#c23531",
+            "#2f4554",
+            "#61a0a8",
+            "#d48265",
+            "#749f83",
+            "#ca8622",
+            "#bda29a",
+            "#6e7074",
+            "#546570",
+            "#c4ccd3",
+            "#f05b72",
+            "#ef5b9c",
+            "#f47920",
+            "#905a3d",
+            "#fab27b",
+            "#2a5caa",
+            "#444693",
+            "#726930",
+            "#b2d235",
+            "#6d8346",
+            "#ac6767",
+            "#1d953f",
+            "#6950a1",
+            "#918597"
+        ],
+        "series": [{
+                "type": "line",
+                "name": "\u4e2d\u56fd",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        4550.453596
+                    ],
+                    [
+                        "2011",
+                        5618.132490999999
+                    ],
+                    [
+                        "2012",
+                        6316.918863
+                    ],
+                    [
+                        "2013",
+                        7050.64592
+                    ],
+                    [
+                        "2014",
+                        7651.366043999999
+                    ],
+                    [
+                        "2015",
+                        8033.388043000001
+                    ],
+                    [
+                        "2016",
+                        8078.790473999999
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u5c3c\u65e5\u5229\u4e9a",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        2292.4451559999998
+                    ],
+                    [
+                        "2011",
+                        2520.404166
+                    ],
+                    [
+                        "2012",
+                        2746.991789
+                    ],
+                    [
+                        "2013",
+                        2998.072843
+                    ],
+                    [
+                        "2014",
+                        3222.693537
+                    ],
+                    [
+                        "2015",
+                        2730.430324
+                    ],
+                    [
+                        "2016",
+                        2175.99967
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e16\u754c",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        9538.846778000001
+                    ],
+                    [
+                        "2011",
+                        10473.62997
+                    ],
+                    [
+                        "2012",
+                        10589.20847
+                    ],
+                    [
+                        "2013",
+                        10764.19177
+                    ],
+                    [
+                        "2014",
+                        10928.871159999999
+                    ],
+                    [
+                        "2015",
+                        10217.656009999999
+                    ],
+                    [
+                        "2016",
+                        10247.93623
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        6344.152969
+                    ],
+                    [
+                        "2011",
+                        7533.005862999999
+                    ],
+                    [
+                        "2012",
+                        8009.525570999999
+                    ],
+                    [
+                        "2013",
+                        8448.564499
+                    ],
+                    [
+                        "2014",
+                        8651.290227
+                    ],
+                    [
+                        "2015",
+                        8032.489459
+                    ],
+                    [
+                        "2016",
+                        7921.734348000001
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        1659.708394
+                    ],
+                    [
+                        "2011",
+                        1845.6078670000002
+                    ],
+                    [
+                        "2012",
+                        1907.1616149999998
+                    ],
+                    [
+                        "2013",
+                        1962.132293
+                    ],
+                    [
+                        "2014",
+                        2040.165511
+                    ],
+                    [
+                        "2015",
+                        1995.940544
+                    ],
+                    [
+                        "2016",
+                        2049.093225
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        3916.58872
+                    ],
+                    [
+                        "2011",
+                        4574.342688000001
+                    ],
+                    [
+                        "2012",
+                        4823.5332020000005
+                    ],
+                    [
+                        "2013",
+                        5050.445776
+                    ],
+                    [
+                        "2014",
+                        5176.453636
+                    ],
+                    [
+                        "2015",
+                        4850.346611999999
+                    ],
+                    [
+                        "2016",
+                        4817.176095000001
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4f4e\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        638.2310085
+                    ],
+                    [
+                        "2011",
+                        696.4949412999999
+                    ],
+                    [
+                        "2012",
+                        733.2472295
+                    ],
+                    [
+                        "2013",
+                        783.1790758
+                    ],
+                    [
+                        "2014",
+                        822.2763324
+                    ],
+                    [
+                        "2015",
+                        792.2081299
+                    ],
+                    [
+                        "2016",
+                        737.9746147999999
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            }
+        ],
+        "legend": [{
+            "data": [
+                "\u4e2d\u56fd",
+                "\u5c3c\u65e5\u5229\u4e9a",
+                "\u4e16\u754c",
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4f4e\u6536\u5165\u56fd\u5bb6"
+            ],
+            "selected": {
+                "\u4e2d\u56fd": true,
+                "\u5c3c\u65e5\u5229\u4e9a": true,
+                "\u4e16\u754c": true,
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4f4e\u6536\u5165\u56fd\u5bb6": true
+            },
+            "show": true
+        }],
+        "tooltip": {
+            "show": true,
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "textStyle": {
+                "fontSize": 14
+            },
+            "borderWidth": 0
+        },
+        "xAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2010",
+                "2011",
+                "2012",
+                "2013",
+                "2014",
+                "2015",
+                "2016"
+            ]
+        }],
+        "yAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }],
+        "title": [{
+            "text": "\u5404\u56fd\u6bcf\u5e74\u4eba\u5747GDP\uff08\u7f8e\u5143\uff09",
+            "top": "3.8%"
+        }],
+        "dataZoom": [{
+                "show": true,
+                "type": "slider",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            },
+            {
+                "show": true,
+                "type": "inside",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            }
+        ]
+    };
+    chart_248345bb5a9241a2811de10e7d227ff1.setOption(option_248345bb5a9241a2811de10e7d227ff1);
+</script>
+<div id="b6ca1a9e9d2f413b9357fee2d36a9945" class="chart-container" style="width:900px; height:500px;display:none;"></div>
+<script>
+    var chart_b6ca1a9e9d2f413b9357fee2d36a9945 = echarts.init(
+        document.getElementById('b6ca1a9e9d2f413b9357fee2d36a9945'), 'white', {
+            renderer: 'canvas'
+        });
+    var option_b6ca1a9e9d2f413b9357fee2d36a9945 = {
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "color": [
+            "#c23531",
+            "#2f4554",
+            "#61a0a8",
+            "#d48265",
+            "#749f83",
+            "#ca8622",
+            "#bda29a",
+            "#6e7074",
+            "#546570",
+            "#c4ccd3",
+            "#f05b72",
+            "#ef5b9c",
+            "#f47920",
+            "#905a3d",
+            "#fab27b",
+            "#2a5caa",
+            "#444693",
+            "#726930",
+            "#b2d235",
+            "#6d8346",
+            "#ac6767",
+            "#1d953f",
+            "#6950a1",
+            "#918597"
+        ],
+        "series": [{
+                "type": "line",
+                "name": "\u4e2d\u56fd",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        21.36831943
+                    ],
+                    [
+                        "2011",
+                        21.53258961
+                    ],
+                    [
+                        "2012",
+                        21.69685979
+                    ],
+                    [
+                        "2013",
+                        21.86112996
+                    ],
+                    [
+                        "2014",
+                        22.02539848
+                    ],
+                    [
+                        "2015",
+                        22.18966865
+                    ],
+                    [
+                        "2016",
+                        22.35394181
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u5c3c\u65e5\u5229\u4e9a",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        9.926765265
+                    ],
+                    [
+                        "2011",
+                        9.477036344
+                    ],
+                    [
+                        "2012",
+                        9.02730635
+                    ],
+                    [
+                        "2013",
+                        8.577577429
+                    ],
+                    [
+                        "2014",
+                        8.127847972
+                    ],
+                    [
+                        "2015",
+                        7.678118515
+                    ],
+                    [
+                        "2016",
+                        7.228389057999999
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e16\u754c",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        30.86996409
+                    ],
+                    [
+                        "2011",
+                        30.84438914
+                    ],
+                    [
+                        "2012",
+                        30.81984683
+                    ],
+                    [
+                        "2013",
+                        30.79467396
+                    ],
+                    [
+                        "2014",
+                        30.76956804
+                    ],
+                    [
+                        "2015",
+                        30.74426441
+                    ],
+                    [
+                        "2016",
+                        30.71642094
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        34.60473029
+                    ],
+                    [
+                        "2011",
+                        34.59968741
+                    ],
+                    [
+                        "2012",
+                        34.59530857
+                    ],
+                    [
+                        "2013",
+                        34.59202462
+                    ],
+                    [
+                        "2014",
+                        34.58735831
+                    ],
+                    [
+                        "2015",
+                        34.58264202
+                    ],
+                    [
+                        "2016",
+                        34.57791945
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        29.51525674
+                    ],
+                    [
+                        "2011",
+                        29.39610725
+                    ],
+                    [
+                        "2012",
+                        29.27719095
+                    ],
+                    [
+                        "2013",
+                        29.15815769
+                    ],
+                    [
+                        "2014",
+                        29.03910907
+                    ],
+                    [
+                        "2015",
+                        28.91998735
+                    ],
+                    [
+                        "2016",
+                        28.80082717
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        33.29967333
+                    ],
+                    [
+                        "2011",
+                        33.26537886
+                    ],
+                    [
+                        "2012",
+                        33.23162694
+                    ],
+                    [
+                        "2013",
+                        33.19862212
+                    ],
+                    [
+                        "2014",
+                        33.16462547
+                    ],
+                    [
+                        "2015",
+                        33.13057185
+                    ],
+                    [
+                        "2016",
+                        33.0965024
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4f4e\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        25.90885918
+                    ],
+                    [
+                        "2011",
+                        25.79194235
+                    ],
+                    [
+                        "2012",
+                        25.67551029
+                    ],
+                    [
+                        "2013",
+                        25.55906792
+                    ],
+                    [
+                        "2014",
+                        25.44482394
+                    ],
+                    [
+                        "2015",
+                        25.32837364
+                    ],
+                    [
+                        "2016",
+                        25.21193079
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u9ad8\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        28.77211253
+                    ],
+                    [
+                        "2011",
+                        28.80458925
+                    ],
+                    [
+                        "2012",
+                        28.83935497
+                    ],
+                    [
+                        "2013",
+                        28.87049664
+                    ],
+                    [
+                        "2014",
+                        28.90282051
+                    ],
+                    [
+                        "2015",
+                        28.93554036
+                    ],
+                    [
+                        "2016",
+                        28.95943189
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            }
+        ],
+        "legend": [{
+            "data": [
+                "\u4e2d\u56fd",
+                "\u5c3c\u65e5\u5229\u4e9a",
+                "\u4e16\u754c",
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4f4e\u6536\u5165\u56fd\u5bb6",
+                "\u9ad8\u6536\u5165\u56fd\u5bb6"
+            ],
+            "selected": {
+                "\u4e2d\u56fd": true,
+                "\u5c3c\u65e5\u5229\u4e9a": true,
+                "\u4e16\u754c": true,
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4f4e\u6536\u5165\u56fd\u5bb6": true,
+                "\u9ad8\u6536\u5165\u56fd\u5bb6": true
+            },
+            "show": true
+        }],
+        "tooltip": {
+            "show": true,
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "textStyle": {
+                "fontSize": 14
+            },
+            "borderWidth": 0
+        },
+        "xAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2010",
+                "2011",
+                "2012",
+                "2013",
+                "2014",
+                "2015",
+                "2016"
+            ]
+        }],
+        "yAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }],
+        "title": [{
+            "text": "\u68ee\u6797\u8986\u76d6\u7387\uff08\u767e\u5206\u6bd4\uff09",
+            "top": "3.8%"
+        }],
+        "dataZoom": [{
+                "show": true,
+                "type": "slider",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            },
+            {
+                "show": true,
+                "type": "inside",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            }
+        ]
+    };
+    chart_b6ca1a9e9d2f413b9357fee2d36a9945.setOption(option_b6ca1a9e9d2f413b9357fee2d36a9945);
+</script>
+<div id="b8470182609c49c2b555217ba998a1a8" class="chart-container" style="width:900px; height:500px;display:none;"></div>
+<script>
+    var chart_b8470182609c49c2b555217ba998a1a8 = echarts.init(
+        document.getElementById('b8470182609c49c2b555217ba998a1a8'), 'white', {
+            renderer: 'canvas'
+        });
+    var option_b8470182609c49c2b555217ba998a1a8 = {
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "color": [
+            "#c23531",
+            "#2f4554",
+            "#61a0a8",
+            "#d48265",
+            "#749f83",
+            "#ca8622",
+            "#bda29a",
+            "#6e7074",
+            "#546570",
+            "#c4ccd3",
+            "#f05b72",
+            "#ef5b9c",
+            "#f47920",
+            "#905a3d",
+            "#fab27b",
+            "#2a5caa",
+            "#444693",
+            "#726930",
+            "#b2d235",
+            "#6d8346",
+            "#ac6767",
+            "#1d953f",
+            "#6950a1",
+            "#918597"
+        ],
+        "series": [{
+                "type": "line",
+                "name": "\u4e2d\u56fd",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        69.47957041
+                    ],
+                    [
+                        "2011",
+                        70.54202883
+                    ],
+                    [
+                        "2012",
+                        63.82701684
+                    ],
+                    [
+                        "2013",
+                        65.51455022
+                    ],
+                    [
+                        "2014",
+                        59.76736751
+                    ],
+                    [
+                        "2015",
+                        59.06342246
+                    ],
+                    [
+                        "2016",
+                        52.21132204
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u5c3c\u65e5\u5229\u4e9a",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        52.60906391
+                    ],
+                    [
+                        "2011",
+                        50.97308923
+                    ],
+                    [
+                        "2012",
+                        56.129637699999996
+                    ],
+                    [
+                        "2013",
+                        49.74068894
+                    ],
+                    [
+                        "2014",
+                        48.63337361
+                    ],
+                    [
+                        "2015",
+                        75.39899187
+                    ],
+                    [
+                        "2016",
+                        71.369601
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e16\u754c",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        50.24771686
+                    ],
+                    [
+                        "2011",
+                        50.76662896
+                    ],
+                    [
+                        "2012",
+                        47.528763
+                    ],
+                    [
+                        "2013",
+                        47.94310068
+                    ],
+                    [
+                        "2014",
+                        45.93925259
+                    ],
+                    [
+                        "2015",
+                        47.22561686
+                    ],
+                    [
+                        "2016",
+                        45.1507745
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        49.41776161
+                    ],
+                    [
+                        "2011",
+                        49.87393806
+                    ],
+                    [
+                        "2012",
+                        45.97739278
+                    ],
+                    [
+                        "2013",
+                        46.57975482
+                    ],
+                    [
+                        "2014",
+                        42.979937299999996
+                    ],
+                    [
+                        "2015",
+                        42.71493487
+                    ],
+                    [
+                        "2016",
+                        38.57786739
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        67.27958551
+                    ],
+                    [
+                        "2011",
+                        67.7944635
+                    ],
+                    [
+                        "2012",
+                        63.31200554
+                    ],
+                    [
+                        "2013",
+                        64.01195075
+                    ],
+                    [
+                        "2014",
+                        62.65168718
+                    ],
+                    [
+                        "2015",
+                        64.84786016
+                    ],
+                    [
+                        "2016",
+                        63.89591152
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        58.6772891
+                    ],
+                    [
+                        "2011",
+                        59.19966251
+                    ],
+                    [
+                        "2012",
+                        55.03076053
+                    ],
+                    [
+                        "2013",
+                        55.71529039
+                    ],
+                    [
+                        "2014",
+                        53.32300771
+                    ],
+                    [
+                        "2015",
+                        54.38996564
+                    ],
+                    [
+                        "2016",
+                        51.97482792
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u4f4e\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        41.34219858
+                    ],
+                    [
+                        "2011",
+                        41.94446729
+                    ],
+                    [
+                        "2012",
+                        42.0768078
+                    ],
+                    [
+                        "2013",
+                        41.04672487
+                    ],
+                    [
+                        "2014",
+                        40.07027827
+                    ],
+                    [
+                        "2015",
+                        43.80431034
+                    ],
+                    [
+                        "2016",
+                        42.92042352
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "line",
+                "name": "\u9ad8\u6536\u5165\u56fd\u5bb6",
+                "connectNulls": false,
+                "symbolSize": 4,
+                "showSymbol": true,
+                "smooth": false,
+                "step": false,
+                "data": [
+                    [
+                        "2010",
+                        16.66933845
+                    ],
+                    [
+                        "2011",
+                        16.95879054
+                    ],
+                    [
+                        "2012",
+                        16.080917499999998
+                    ],
+                    [
+                        "2013",
+                        15.87959148
+                    ],
+                    [
+                        "2014",
+                        14.98694811
+                    ],
+                    [
+                        "2015",
+                        15.81445441
+                    ],
+                    [
+                        "2016",
+                        14.5179518
+                    ]
+                ],
+                "hoverAnimation": true,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                },
+                "areaStyle": {
+                    "opacity": 0
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            }
+        ],
+        "legend": [{
+            "data": [
+                "\u4e2d\u56fd",
+                "\u5c3c\u65e5\u5229\u4e9a",
+                "\u4e16\u754c",
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4f4e\u6536\u5165\u56fd\u5bb6",
+                "\u9ad8\u6536\u5165\u56fd\u5bb6"
+            ],
+            "selected": {
+                "\u4e2d\u56fd": true,
+                "\u5c3c\u65e5\u5229\u4e9a": true,
+                "\u4e16\u754c": true,
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6": true,
+                "\u4f4e\u6536\u5165\u56fd\u5bb6": true,
+                "\u9ad8\u6536\u5165\u56fd\u5bb6": true
+            },
+            "show": true
+        }],
+        "tooltip": {
+            "show": true,
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "textStyle": {
+                "fontSize": 14
+            },
+            "borderWidth": 0
+        },
+        "xAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2010",
+                "2011",
+                "2012",
+                "2013",
+                "2014",
+                "2015",
+                "2016"
+            ]
+        }],
+        "yAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }],
+        "title": [{
+            "text": "PM2.5\u7a7a\u6c14\u6c61\u67d3\u6307\u6570",
+            "top": "3.8%"
+        }],
+        "dataZoom": [{
+                "show": true,
+                "type": "slider",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            },
+            {
+                "show": true,
+                "type": "inside",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            }
+        ]
+    };
+    chart_b8470182609c49c2b555217ba998a1a8.setOption(option_b8470182609c49c2b555217ba998a1a8);
+</script>
+
+{% endblock figure %}
+
+{% block list %}
+<div class="table-responsive" id="list-1">
+    <select onchange="selectRows('list-1',this)">
+        <option value="line0">全部显示</option>
+        {% for list in list_data_1 %}
+        <option value="line{{loop.index}}">{{list[0]}}</option>
+        {% endfor %}
+    </select>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>国家</th>
+                <th>2010</th>
+                <th>2011</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+                <th>2016</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in list_data_1 %}
+            <tr  class="list-1-rows" id="list-1-line{{loop.index}}">
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+                <td>{{data[3]}}</td>
+                <td>{{data[4]}}</td>
+                <td>{{data[5]}}</td>
+                <td>{{data[6]}}</td>
+                <td>{{data[7]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="table-responsive" id="list-2" style="display:none;">
+    <select onchange="selectRows('list-2',this)">
+        <option value="line0">全部显示</option>
+        {% for list in list_data_2 %}
+        <option value="line{{loop.index}}">{{list[0]}}</option>
+        {% endfor %}
+    </select>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>国家</th>
+                <th>2010</th>
+                <th>2011</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+                <th>2016</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in list_data_2 %}
+            <tr  class="list-2-rows" id="list-2-line{{loop.index}}">
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+                <td>{{data[3]}}</td>
+                <td>{{data[4]}}</td>
+                <td>{{data[5]}}</td>
+                <td>{{data[6]}}</td>
+                <td>{{data[7]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="table-responsive" id="list-3" style="display:none;">
+    <select onchange="selectRows('list-3',this)">
+        <option value="line0">全部显示</option>
+        {% for list in list_data_3 %}
+        <option value="line{{loop.index}}">{{list[0]}}</option>
+        {% endfor %}
+    </select>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>国家</th>
+                <th>2010</th>
+                <th>2011</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+                <th>2016</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in list_data_3 %}
+            <tr class="list-3-rows" id="list-3-line{{loop.index}}">
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+                <td>{{data[3]}}</td>
+                <td>{{data[4]}}</td>
+                <td>{{data[5]}}</td>
+                <td>{{data[6]}}</td>
+                <td>{{data[7]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock list %}
+
+{% block scripts %}
+<script>
+    function selectRows(list_id,obj){
+        let rows = document.getElementsByClassName(list_id+"-rows")
+        if(obj.value == "line0"){
+            for(i=0;i<rows.length;i++){
+                rows[i].style.display = "";
+            }
+        }else{
+            for(i=0;i<rows.length;i++){
+                if(rows[i].id != list_id + "-" +obj.value){
+                    rows[i].style.display = "none";
+                }else{
+                    rows[i].style.display = "";
+                }
+                
+            }
+        }    
+    }
+    function getTableType(obj) {
+        if (obj.value == "1") {
+            document.getElementById("list-1").style.display = "";
+            document.getElementById("248345bb5a9241a2811de10e7d227ff1").style.display = "";
+            document.getElementById("list-2").style.display = "none";
+            document.getElementById("b6ca1a9e9d2f413b9357fee2d36a9945").style.display = "none";
+            document.getElementById("list-3").style.display = "none";
+            document.getElementById("b8470182609c49c2b555217ba998a1a8").style.display = "none";
+        }
+        if (obj.value == "2") {
+            document.getElementById("list-1").style.display = "none";
+            document.getElementById("248345bb5a9241a2811de10e7d227ff1").style.display = "none";
+            document.getElementById("list-2").style.display = "";
+            document.getElementById("b6ca1a9e9d2f413b9357fee2d36a9945").style.display = "";
+            document.getElementById("list-3").style.display = "none";
+            document.getElementById("b8470182609c49c2b555217ba998a1a8").style.display = "none";
+        }
+        if (obj.value == "3") {
+            document.getElementById("list-1").style.display = "none";
+            document.getElementById("248345bb5a9241a2811de10e7d227ff1").style.display = "none";
+            document.getElementById("list-2").style.display = "none";
+            document.getElementById("b6ca1a9e9d2f413b9357fee2d36a9945").style.display = "none";
+            document.getElementById("list-3").style.display = "";
+            document.getElementById("b8470182609c49c2b555217ba998a1a8").style.display = "";
+        }
+    }
+</script>
+{% endblock scripts %}

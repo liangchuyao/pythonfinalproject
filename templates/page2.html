@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block text %}
+<h4>由于全球的国家和地区众多所以我选择了比较有代表性的一些，中国（PM2.5（越低越好）降低17.2682484%）尼日利亚（PM2.5（越低越好）升高高18.760537%）以及全球平均值、中高低等收入国家的数据。</h4>
+{% endblock text %}
+
+{% block figure %}
+<div id="e06f3c02af464bc0920bbb3e35385423" class="chart-container" style="width:900px; height:500px;"></div>
+<script>
+    var chart_e06f3c02af464bc0920bbb3e35385423 = echarts.init(
+        document.getElementById('e06f3c02af464bc0920bbb3e35385423'), 'white', {
+            renderer: 'canvas'
+        });
+    var option_e06f3c02af464bc0920bbb3e35385423 = {
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "color": [
+            "#c23531",
+            "#2f4554",
+            "#61a0a8",
+            "#d48265",
+            "#749f83",
+            "#ca8622",
+            "#bda29a",
+            "#6e7074",
+            "#546570",
+            "#c4ccd3",
+            "#f05b72",
+            "#ef5b9c",
+            "#f47920",
+            "#905a3d",
+            "#fab27b",
+            "#2a5caa",
+            "#444693",
+            "#726930",
+            "#b2d235",
+            "#6d8346",
+            "#ac6767",
+            "#1d953f",
+            "#6950a1",
+            "#918597"
+        ],
+        "series": [{
+                "type": "bar",
+                "name": "2010",
+                "data": [
+                    69.47957041,
+                    52.60906391,
+                    41.34219858,
+                    67.27958551,
+                    58.6772891,
+                    49.41776161,
+                    16.66933845
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            },
+            {
+                "type": "bar",
+                "name": "2016",
+                "data": [
+                    52.21132204,
+                    71.369601,
+                    42.92042352,
+                    63.89591152,
+                    51.97482792,
+                    38.57786739,
+                    14.5179518
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "rippleEffect": {
+                    "show": true,
+                    "brushType": "stroke",
+                    "scale": 2.5,
+                    "period": 4
+                }
+            }
+        ],
+        "legend": [{
+            "data": [
+                "2010",
+                "2016"
+            ],
+            "selected": {
+                "2010": true,
+                "2016": true
+            },
+            "show": true
+        }],
+        "tooltip": {
+            "show": true,
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "textStyle": {
+                "fontSize": 14
+            },
+            "borderWidth": 0
+        },
+        "xAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u4e2d\u56fd",
+                "\u5c3c\u65e5\u5229\u4e9a",
+                "\u4f4e\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u4f4e\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u4e2d\u9ad8\u7b49\u6536\u5165\u56fd\u5bb6",
+                "\u9ad8\u6536\u5165\u56fd\u5bb6"
+            ]
+        }],
+        "yAxis": [{
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }],
+        "title": [{
+            "text": "2010-2016PM2.5\u6392\u653e\u53d8\u5316"
+        }],
+        "dataZoom": [{
+                "show": true,
+                "type": "slider",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            },
+            {
+                "show": true,
+                "type": "inside",
+                "realtime": true,
+                "start": 20,
+                "end": 80,
+                "orient": "horizontal",
+                "zoomLock": false
+            }
+        ]
+    };
+    chart_e06f3c02af464bc0920bbb3e35385423.setOption(option_e06f3c02af464bc0920bbb3e35385423);
+</script>
+{% endblock figure %}
+
+{% block list %}
+<div class="table-responsive" id="list-1">
+    <table class="table table-striped table-sm">
+        <select onchange="selectRows('list-1',this)">
+            <option value="line0">全部显示</option>
+            {% for list in list_data_1 %}
+            <option value="line{{loop.index}}">{{list[0]}}</option>
+            {% endfor %}
+        </select>
+        <thead>
+            <tr>
+                <th>year</th>
+                <th>中国</th>
+                <th>尼日利亚</th>
+                <th>低收入国家</th>
+                <th>中低入国家</th>
+                <th>中等收入国家</th>
+                <th>中高等收入国家</th>
+                <th>高收入国家</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in list_data_1 %}
+            <tr class="list-1-rows" id="list-1-line{{loop.index}}">
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+                <td>{{data[3]}}</td>
+                <td>{{data[4]}}</td>
+                <td>{{data[5]}}</td>
+                <td>{{data[6]}}</td>
+                <td>{{data[7]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock list %}
+
+{% block scripts %}
+<script>
+    function selectRows(list_id,obj){
+        let rows = document.getElementsByClassName(list_id+"-rows")
+        if(obj.value == "line0"){
+            for(i=0;i<rows.length;i++){
+                rows[i].style.display = "";
+            }
+        }else{
+            for(i=0;i<rows.length;i++){
+                if(rows[i].id != list_id + "-" +obj.value){
+                    rows[i].style.display = "none";
+                }else{
+                    rows[i].style.display = "";
+                }
+                
+            }
+        }
+        
+    }
+</script>
+{% endblock scripts %}
